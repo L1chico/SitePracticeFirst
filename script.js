@@ -6,7 +6,7 @@ let textSlider_bottom = document.getElementById("container-info-1__position_1__t
 let ScrollButtonLeft = document.getElementsByClassName('container-info-2__button__left')[0];
 let ScrollButtonRight = document.getElementsByClassName('container-info-2__button__right')[0];
 let ScrollCardDisplay = document.getElementsByClassName('container-info-2__card-display')[0];
-let ScrollButtonCounterRight = 0;
+let ScrollButtonCounterRight = 1;
 
 
 //main
