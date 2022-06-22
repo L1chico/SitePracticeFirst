@@ -83,13 +83,14 @@ body {
 	box-shadow: 0px 0px 30px rgb(76, 212, 106);
 }
 .container-info-2 {
-	background-color: rgb(0, 255, 42);
+	background-color: rgb(255, 255, 255);
 	height: 600px;
 	
 }
 .container-info-2__container-img {
 	display: flex;
 	justify-content: center;
+	background-color: rgb(0, 255, 42);
 	width: 100%;
 }
 .container-info-2__card-potision {
@@ -113,6 +114,21 @@ body {
 .container-info-2__button__left:hover {
 	box-shadow: 0px 0px 20px rgb(76, 212, 106);
 }
+.container-info-2__button__left-double {
+	margin: 0px;
+	padding: 0px;
+	border: 1px;
+	border-radius: 30px;
+	width: 24px;
+	height: 24px;
+}
+.container-info-2__button__left-double img {
+	width: 24px;
+	height: 24px;
+}
+.container-info-2__button__left-double:hover {
+	box-shadow: 0px 0px 20px rgb(76, 212, 106);
+}
 .container-info-2__button__right {
 	margin: 0px;
 	padding: 0px;
@@ -128,20 +144,42 @@ body {
 .container-info-2__button__right:hover {
 	box-shadow: 0px 0px 20px rgb(76, 212, 106);
 }
+.container-info-2__button__right-double {
+	margin: 0px;
+	padding: 0px;
+	border: 1px;
+	border-radius: 30px;
+	width: 24px;
+	height: 24px;
+}
+.container-info-2__button__right-double img {
+	width: 24px;
+	height: 24px;
+}
+.container-info-2__button__right-double:hover {
+	box-shadow: 0px 0px 20px rgb(76, 212, 106);
+}
 .container-info-2__card-display {
-	height: 300px;
+	height: 310px;
 	width: 600px;
 	overflow-y: hidden;
 	overflow-x: hidden;
+}
+.container-info-2__card-display::before {
+	display: block;
+	position: absolute;
+	width: 1px;
+	height: 310px;
+	background-color: rgb(76, 212, 106);
 }
 .container-info-2__card-view {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
-	height: 300px;
+	height: 310px;
 	width: 2000px;
-	background-color: black;
+	background-color: rgb(255, 255, 255);
 }
 
 .card-1 , .card-2 , .card-3 , .card-4 , .card-5 , .card-6{
@@ -151,6 +189,11 @@ body {
 	width: 250px;
 	height: 300px;
 	background-color: aqua;
+	border-radius: 30px;
+	border: 3px solid black;
+}
+.card-1:hover , .card-2:hover, .card-3:hover, .card-4:hover, .card-5:hover, .card-6:hover{
+	box-shadow: 0px 0px 20px rgb(76, 212, 106);
 }
 
 .button-potision {
@@ -166,7 +209,6 @@ body {
 	height: 48px;
 	width: 48px;
 	border: none;
-	
 }
 .button-potision .button__up {
 	background: none;

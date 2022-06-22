@@ -6,7 +6,10 @@ let textSlider_bottom = document.getElementById("container-info-1__position_1__t
 let ScrollButtonLeft = document.getElementsByClassName('container-info-2__button__left')[0];
 let ScrollButtonRight = document.getElementsByClassName('container-info-2__button__right')[0];
 let ScrollCardDisplay = document.getElementsByClassName('container-info-2__card-display')[0];
-let ScrollButtonCounterRight = 1;
+let ScrollButtonCounterRight = 0;
+let ScrollButtonLeftDouble = document.getElementsByClassName('container-info-2__button__left-double')[0];
+let ScrollButtonRightDouble = document.getElementsByClassName('container-info-2__button__right-double')[0];
+
 
 
 //main
@@ -24,6 +27,15 @@ const text_arr_sider_bottom = [
     'Статус заповедника имеет около 12% всей поверхности планеты Земля',
     'Тибет является областью с самой незагрязненной и чистой экологией'
 ];
+const slider_card_potision = [
+    0,
+    170,
+    530,
+    900,
+    1270,
+    1400
+];
+let slider_card_potision_counter = 0;
 //animate function
 function animate_imgSlider({duration, draw, timing}) {
     let start = performance.now();
@@ -40,6 +52,14 @@ function animate_imgSlider({duration, draw, timing}) {
     })
 }
 
+function scrollButonAnimateRight (potistion) {
+    potistion += 10;
+    return potistion;
+}
+function scrollButonAnimateLeft (potistion) {
+    potistion -= 10;
+    return potistion;
+}
 
 //First animathion
 let timerImgSlider_up = setInterval(() => {
@@ -66,8 +86,6 @@ let timerImgSlider_up = setInterval(() => {
             duration: 1000,
             timing: (timeFraction) => {
                 return timeFraction;
-                // return Math.pow(timeFraction, 2);
-                /* return 1 - Math.sin(Math.acos(timeFraction)); */
             },
             draw: (progress) => {
                 imgSlider_up.style.transform = 'scaleX(' + progress + ')';
@@ -89,8 +107,6 @@ let timerImgSlider_bottom = setInterval(() => {
         duration: 1000,
         timing: (timeFraction) => {
             return timeFraction;
-            // return Math.pow(timeFraction, 2);
-            /* return 1 - Math.sin(Math.acos(timeFraction)); */
         },
         draw: (progress) => {
             switch (progress) {
@@ -109,8 +125,6 @@ let timerImgSlider_bottom = setInterval(() => {
             duration: 1000,
             timing: (timeFraction) => {
                 return timeFraction;
-                // return Math.pow(timeFraction, 2);
-                /* return 1 - Math.sin(Math.acos(timeFraction)); */
             },
             draw: (progress) => {
                 imgSlider_bottom.style.transform = 'scaleX(' + progress + ')';
@@ -124,19 +138,53 @@ imgSlider_bottom.onclick = (()=> {
     clearInterval(timerImgSlider_bottom);
 });
 
-//button scroll left
-ScrollButtonLeft.onclick = (() => {
-    console.log('Кнопка лево');
-    ScrollCardDisplay.scrollLeft = 0;
-});
-//button scroll right
-// ScrollButtonRight.onclick = (() => {
-//     console.log('Кнопка право');
-//     ScrollCardDisplay.scrollLeft = 700;
-// });
+//button scroll right mousedown
 ScrollButtonRight.onmousedown = (() => {
+    clearInterval(window.timerScrollButtonRight);
     console.log('Кнопка право');
-    let timerScrollButtonRight = setInterval(() => {
-        
+    window.timerScrollButtonRight = setInterval(() => {
+        console.log('Цикл идёт');
+        ScrollCardDisplay.scrollLeft = scrollButonAnimateRight(ScrollCardDisplay.scrollLeft);
     }, 20);
+});
+//mouseup
+ScrollButtonRight.onmouseup = (() => {
+    console.log('Остановка цикла');
+    clearInterval(window.timerScrollButtonRight);
+});
+//button scroll left mousedown
+ScrollButtonLeft.onmousedown = (() => {
+    clearInterval(window.timerScrollButtonLeft);
+    console.log('Кнопка лево');
+    window.timerScrollButtonLeft = setInterval(() => {
+        console.log('Цикл идёт');
+        ScrollCardDisplay.scrollLeft = scrollButonAnimateLeft(ScrollCardDisplay.scrollLeft);
+    }, 20);
+});
+//mouseup
+ScrollButtonLeft.onmouseup = (() => {
+    console.log('Остановка цикла');
+    clearInterval(window.timerScrollButtonLeft);
+});
+//button scroll right double onclick
+ScrollButtonRightDouble.onclick = (() => {
+    console.log('Начальное значение' + slider_card_potision_counter);
+    slider_card_potision_counter++;
+    console.log('Увеличенное значение' + slider_card_potision_counter);
+    if (slider_card_potision_counter >= slider_card_potision.length) {slider_card_potision_counter = 0;}
+    ScrollCardDisplay.scrollLeft = slider_card_potision[slider_card_potision_counter];
+    console.log(slider_card_potision[slider_card_potision_counter]);
+    console.log('Проверенное значение' + slider_card_potision_counter);
+    console.log('_______________');
+});
+//button scroll left double onclick
+ScrollButtonLeftDouble.onclick = (() => {
+    console.log('Начальное значение' + slider_card_potision_counter);
+    slider_card_potision_counter--;
+    console.log('Увеличенное значение' + slider_card_potision_counter);
+    if (slider_card_potision_counter < 0) {slider_card_potision_counter = slider_card_potision.length-1;}
+    ScrollCardDisplay.scrollLeft = slider_card_potision[slider_card_potision_counter];
+    console.log(slider_card_potision[slider_card_potision_counter]);
+    console.log('Проверенное значение' + slider_card_potision_counter);
+    console.log('_______________');
 });
