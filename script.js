@@ -33,7 +33,7 @@ const slider_card_potision = [
     530,
     900,
     1270,
-    1400
+    1401
 ];
 let slider_card_potision_counter = 0;
 //animate function
@@ -166,8 +166,8 @@ ScrollButtonLeft.onmouseup = (() => {
     console.log('Остановка цикла');
     clearInterval(window.timerScrollButtonLeft);
 });
-//button scroll right double onclick
-ScrollButtonRightDouble.onclick = (() => {
+//button scroll right double onclick version 1.0
+/* ScrollButtonRightDouble.onclick = (() => {
      console.log('Начальное значение' + slider_card_potision_counter);
      slider_card_potision_counter++;
      console.log('Увеличенное значение' + slider_card_potision_counter);
@@ -176,10 +176,10 @@ ScrollButtonRightDouble.onclick = (() => {
      console.log(slider_card_potision[slider_card_potision_counter]);
      console.log('Проверенное значение' + slider_card_potision_counter);
      console.log('_______________');
-});
+}); */
 
-//button scroll left double onclick
-ScrollButtonLeftDouble.onclick = (() => {
+//button scroll left double onclick version 1.0
+/* ScrollButtonLeftDouble.onclick = (() => {
      console.log('Начальное значение' + slider_card_potision_counter);
      slider_card_potision_counter--;
      console.log('Увеличенное значение' + slider_card_potision_counter);
@@ -188,8 +188,10 @@ ScrollButtonLeftDouble.onclick = (() => {
      console.log(slider_card_potision[slider_card_potision_counter]);
      console.log('Проверенное значение' + slider_card_potision_counter);
      console.log('_______________');
-});
-/*  ScrollButtonLeftDouble.onclick = (() => {
+}); */
+//
+//button scroll left double onclick not working version
+/* ScrollButtonLeftDouble.onclick = (() => {
     let ScrollIndex = 0;
     let ScrollResult = 0;
     console.log('Начало' + ScrollIndex + '////' + ScrollResult);
@@ -205,3 +207,33 @@ ScrollButtonLeftDouble.onclick = (() => {
     ScrollCardDisplay.scrollLeft = slider_card_potision[ScrollIndex];
     console.log(slider_card_potision[ScrollIndex]);
 }); */
+//button scroll right double onclick version 2.0
+ScrollButtonRightDouble.onclick = (() => {
+    console.log('Начало');
+    for (let i = 0; i < slider_card_potision.length; i++) {
+        console.log('Проверка' + slider_card_potision[i]);
+        console.log(Math.abs(ScrollCardDisplay.scrollLeft - slider_card_potision[i]));
+        if (slider_card_potision[i] - ScrollCardDisplay.scrollLeft > 0) {
+            ScrollCardDisplay.scrollLeft = slider_card_potision[i];
+            console.log('Сработало' + slider_card_potision[i]);
+            break;
+        }
+    }
+});
+//button scroll left double onclick version 2.0
+ScrollButtonLeftDouble.onclick = (() => {
+    console.log('Начало');
+    for (let i = slider_card_potision.length; i >= 0; i--) {
+        console.log('Проверка' + slider_card_potision[i]);
+        console.log(Math.abs(ScrollCardDisplay.scrollLeft - slider_card_potision[i]));
+        if (slider_card_potision[i] - ScrollCardDisplay.scrollLeft < 0) {
+            ScrollCardDisplay.scrollLeft = slider_card_potision[i];
+            console.log('Сработало' + slider_card_potision[i]);
+            break;
+        }
+        else if (slider_card_potision[i] == 0) {
+            ScrollCardDisplay.scrollLeft = slider_card_potision[i]
+            console.log('Сработало' + slider_card_potision[i]);
+        };
+    }
+});
