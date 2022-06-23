@@ -168,23 +168,40 @@ ScrollButtonLeft.onmouseup = (() => {
 });
 //button scroll right double onclick
 ScrollButtonRightDouble.onclick = (() => {
-    console.log('Начальное значение' + slider_card_potision_counter);
-    slider_card_potision_counter++;
-    console.log('Увеличенное значение' + slider_card_potision_counter);
-    if (slider_card_potision_counter >= slider_card_potision.length) {slider_card_potision_counter = 0;}
-    ScrollCardDisplay.scrollLeft = slider_card_potision[slider_card_potision_counter];
-    console.log(slider_card_potision[slider_card_potision_counter]);
-    console.log('Проверенное значение' + slider_card_potision_counter);
-    console.log('_______________');
+     console.log('Начальное значение' + slider_card_potision_counter);
+     slider_card_potision_counter++;
+     console.log('Увеличенное значение' + slider_card_potision_counter);
+     if (slider_card_potision_counter >= slider_card_potision.length) {slider_card_potision_counter = 0;}
+     ScrollCardDisplay.scrollLeft = slider_card_potision[slider_card_potision_counter];
+     console.log(slider_card_potision[slider_card_potision_counter]);
+     console.log('Проверенное значение' + slider_card_potision_counter);
+     console.log('_______________');
 });
+
 //button scroll left double onclick
 ScrollButtonLeftDouble.onclick = (() => {
-    console.log('Начальное значение' + slider_card_potision_counter);
-    slider_card_potision_counter--;
-    console.log('Увеличенное значение' + slider_card_potision_counter);
-    if (slider_card_potision_counter < 0) {slider_card_potision_counter = slider_card_potision.length-1;}
-    ScrollCardDisplay.scrollLeft = slider_card_potision[slider_card_potision_counter];
-    console.log(slider_card_potision[slider_card_potision_counter]);
-    console.log('Проверенное значение' + slider_card_potision_counter);
-    console.log('_______________');
+     console.log('Начальное значение' + slider_card_potision_counter);
+     slider_card_potision_counter--;
+     console.log('Увеличенное значение' + slider_card_potision_counter);
+     if (slider_card_potision_counter < 0) {slider_card_potision_counter = slider_card_potision.length-1;}
+     ScrollCardDisplay.scrollLeft = slider_card_potision[slider_card_potision_counter];
+     console.log(slider_card_potision[slider_card_potision_counter]);
+     console.log('Проверенное значение' + slider_card_potision_counter);
+     console.log('_______________');
 });
+/*  ScrollButtonLeftDouble.onclick = (() => {
+    let ScrollIndex = 0;
+    let ScrollResult = 0;
+    console.log('Начало' + ScrollIndex + '////' + ScrollResult);
+    slider_card_potision.forEach((elem, index) => {
+        console.log('Начало' + ScrollIndex + '////' + ScrollResult);
+        console.log(elem + '---' + index);
+        console.log('Начало' + ScrollIndex + '////' + ScrollResult);
+        if (ScrollResult < Math.abs(ScrollCardDisplay.scrollLeft - elem)) {
+            ScrollIndex = index;
+            
+        };
+    });
+    ScrollCardDisplay.scrollLeft = slider_card_potision[ScrollIndex];
+    console.log(slider_card_potision[ScrollIndex]);
+}); */

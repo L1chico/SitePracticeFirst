@@ -144,6 +144,9 @@ body {
 .container-info-2__button__right:hover {
 	box-shadow: 0px 0px 20px rgb(76, 212, 106);
 }
+.container-info-2__button__right img:hover .container-info-2__card-display::before {
+	box-shadow: 0px 0px 20px rgb(76, 212, 106);
+}
 .container-info-2__button__right-double {
 	margin: 0px;
 	padding: 0px;
@@ -164,13 +167,6 @@ body {
 	width: 600px;
 	overflow-y: hidden;
 	overflow-x: hidden;
-}
-.container-info-2__card-display::before {
-	display: block;
-	position: absolute;
-	width: 1px;
-	height: 310px;
-	background-color: rgb(76, 212, 106);
 }
 .container-info-2__card-view {
 	display: flex;
@@ -196,6 +192,144 @@ body {
 	box-shadow: 0px 0px 20px rgb(76, 212, 106);
 }
 
+.card-1__link {
+	text-decoration: none;
+	color: black;
+}
+.card-1__heading {
+	padding-left: 8px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+.card-1__text {
+	margin-left: 8px;
+	font-size: 13px;
+}
+.card-1__image {
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(76, 212, 106);
+}
+.card-2__link {
+	text-decoration: none;
+	color: black;
+}
+.card-2__heading {
+	padding-left: 8px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+.card-2__text {
+	margin-left: 8px;
+	font-size: 13px;
+}
+.card-2__image {
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(76, 212, 106);
+}
+.card-3__link {
+	text-decoration: none;
+	color: black;
+}
+.card-3__heading {
+	padding-left: 8px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+.card-3__text {
+	margin-left: 8px;
+	font-size: 13px;
+}
+.card-3__image {
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(76, 212, 106);
+}
+.card-4__link {
+	text-decoration: none;
+	color: black;
+}
+.card-4__heading {
+	padding-left: 8px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+.card-4__text {
+	margin-left: 8px;
+	font-size: 13px;
+}
+.card-4__image {
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(76, 212, 106);
+}
+.card-5__link {
+	text-decoration: none;
+	color: black;
+}
+.card-5__heading {
+	padding-left: 8px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+.card-5__text {
+	margin-left: 8px;
+	font-size: 13px;
+}
+.card-5__image {
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(76, 212, 106);
+}
+.card-6__link {
+	text-decoration: none;
+	color: black;
+}
+.card-6__heading {
+	padding-left: 8px;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+.card-6__text {
+	margin-left: 8px;
+	font-size: 13px;
+}
+.card-6__image {
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	margin-left: 75px;
+	margin-right: 75px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	border: 2px solid rgb(76, 212, 106);
+}
 .button-potision {
 	position: absolute;
 	width: 100%;
